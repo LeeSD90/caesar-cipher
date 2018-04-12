@@ -1,0 +1,29 @@
+<html>
+  <head></head>
+  <body>
+    Enter the word you want to encrypt and the shift you want to use -
+    <p>
+      <form>
+    	<br>Encrypt: <input type='text' name='string' />
+      <br>Shift:
+      <select name="shift">
+　      <option value=3>3</option>
+　      <option value=4>4</option>
+　      <option value=5>5</option>
+　      <option value=6>6</option>
+　      <option value=7>7</option>
+       <option value=8>8</option>
+       <option value=9>9</option>
+       <option value=10>10</option>
+       <option value=11>11</option>
+       <option value=12>12</option>
+      </select>
+   	  <br><input type='submit' value='Encrypt!' />
+  	 </form>
+    </p>
+  	<p> 
+  		Your encrypted string is <%= encoded_string %>
+  	</p> 
+
+  </body>
+</html>

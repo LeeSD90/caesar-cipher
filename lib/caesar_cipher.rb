@@ -1,3 +1,22 @@
+require 'sinatra'
+require 'sinatra/reloader' if development?
+
+get '/' do
+	pass if params[:string] == nil
+
+	string = params["string"]
+	shift = params["shift"].to_i
+  	encoded_string = caesar_cipher(string, shift)
+  	puts encoded_string
+  	erb :index, :locals => {:encoded_string => encoded_string}
+end
+
+get '/' do
+  pass if params[:string] != nil
+
+  erb :index, :locals =>{:encoded_string => ""}
+end
+
 def caesar_cipher(str, shift)
 
 	hash_az = Hash[("a".."z").to_a.zip((1..26).to_a)]
@@ -23,5 +42,3 @@ def caesar_cipher(str, shift)
 
 	return split.join
 end
-
-puts caesar_cipher("What a string!", 5)
